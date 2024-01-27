@@ -1,10 +1,11 @@
-FROM python:3.9
+FROM python:3.9.1
 
-RUN pip install pandas pyarrow 
+RUN apt-get install wget
+RUN pip install pandas pyarrow sqlalchemy psycopg2
 #WORKDIR [The location in the image of the container]
 WORKDIR /app
 #COPY [Source from host] [Destination]
-COPY pipeline.py pipeline.py
+COPY IngestData.py IngestData.py
 
 
-ENTRYPOINT [ "python", "pipeline.py" ]
+ENTRYPOINT [ "python", "IngestData.py" ]

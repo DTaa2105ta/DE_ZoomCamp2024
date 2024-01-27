@@ -22,3 +22,4 @@ docker run -it \
 --network=pg-network \
 --name pgadmin \
 dpage/pgadmin4
+
